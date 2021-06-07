@@ -1,9 +1,0 @@
-
----
-Files: [source/distantviewmgr.S]
-Hooks:
-  - type: branch
-    instr: bl
-    addr: EE67FD4
-    func: DistantViewMgr_AddBGOffset
-
