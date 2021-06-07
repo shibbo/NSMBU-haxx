@@ -1,5 +1,5 @@
 # NSMBU-haxx
-A compilation of code hacks for NSMBU. Also an example for the [CafeLoader Project Compiler](https://github.com/aboood40091/CafeLoader-Project-Compiler) ([cemu branch](https://github.com/aboood40091/CafeLoader-Project-Compiler/tree/cemu) is needed for building for cemu).  
+A compilation of code hacks for NSMBU. Also an example for the [CafeLoader Project Compiler](https://github.com/aboood40091/CafeLoader-Project-Compiler) ([cemu branch](https://github.com/shibbo/CafeLoader-Cemu) is needed for building for cemu).  
 Pre-built versions can be found in the `build` folder. Stable builds are in the [releases](https://github.com/aboood40091/NSMBU-haxx/releases) page.
 
 ## Current haxx:
