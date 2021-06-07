@@ -71,3 +71,4 @@ OutProj/*
 *.elf
 *.rpx
 *.ti
+scripts/*
