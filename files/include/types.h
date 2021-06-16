@@ -1,15 +1,7 @@
 #pragma once
 
-// Workarounds to match newer standards
-#define nullptr NULL
 #define override
-#define forceinline __attribute__((always_inline))
-
-// https://stackoverflow.com/a/1597129
-#define TOKENPASTE(x, y) x ## y
-#define TOKENPASTE2(x, y) TOKENPASTE(x, y)
-
-#define static_assert(condition, ...) typedef int TOKENPASTE2(static_assert_, __LINE__)[(condition) ? 1 : -1]
+#define nullptr NULL
 
 typedef unsigned char       u8;
 typedef unsigned short      u16;
@@ -24,16 +16,49 @@ typedef signed long long    s64;
 typedef float               f32;
 typedef double              f64;
 
-typedef unsigned int        size_t;
-typedef signed int          ssize_t;
-
-typedef unsigned int        uintptr_t;
-typedef signed int          intptr_t;
-
-enum Direction
+struct Vec2i 
 {
-    RIGHT = 0,
-    LEFT  = 1,
-    UP    = 2,
-    DOWN  = 3
+    s32 x;
+    s32 y;
+
+    Vec2i(s32 v = 0) :
+        x(v), y(v) { }
+
+    Vec2i(s32 x, s32 y) :
+        x(x), y(y) { }
+};
+
+struct Vec3u
+{
+    u32 x;
+    u32 y;
+    u32 z;
+};
+
+struct Vec3i
+{
+    s32 x;
+    s32 y;
+    s32 z;
+};
+
+struct Vec2
+{
+    f32 x;
+    f32 y;
+};
+
+struct Vec3
+{
+    f32 x;
+    f32 y;
+    f32 z;
+};
+
+struct Rect
+{
+    f32 x;
+    f32 y;
+    f32 w;
+    f32 h;
 };

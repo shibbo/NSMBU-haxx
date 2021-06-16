@@ -1,18 +1,20 @@
 #pragma once
 
+#include "sead.h"
 #include "types.h"
 
-namespace agl { namespace lyr {
-
-class Layer : public sead::IDisposer // size: 0x41C
+namespace agl
 {
-public:
-    Layer();
-    virtual ~Layer();
+    namespace lyr
+    {
+        class Layer : public sead::IDisposer
+        {
+        public:
+            Layer();
 
-    // ...
+            virtual ~Layer();
 
-    u8 _10[0x41C - 0x10];
+            u8 _10[0x41C - 0x10];
+        };
+    };
 };
-
-} }

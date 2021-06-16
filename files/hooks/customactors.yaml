@@ -1,7 +1,4 @@
-
 ---
 Files:
-  - source/actorspawner.cpp
-  - source/flipblock.cpp
-  - source/magicplatform.cpp
+  - source/actor/flipblock.cpp
 Hooks: []

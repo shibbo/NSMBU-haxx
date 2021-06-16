@@ -3,12 +3,7 @@
 Name: NSMBU Haxx
 Modules:
   - hooks/aa.yaml
-  - hooks/activecollider.yaml
-  - hooks/areatask.yaml
   - hooks/ctors.yaml
   - hooks/customactors.yaml
-  - hooks/distantviewmgr.yaml
   - hooks/dynamic_libs.yaml
   - hooks/profile.yaml
-  - hooks/sead.yaml
-  - hooks/sound.yaml

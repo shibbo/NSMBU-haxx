@@ -1,5 +1,5 @@
 #pragma once
 
-#include "nw/g3d/res_common.h"
-#include "nw/g3d/res_file.h"
-#include "nw/g3d/shapeobj.h"
+#include "nw/g3d/ResCommon.h"
+#include "nw/g3d/ResFile.h"
+#include "nw/g3d/ShapeObj.h"

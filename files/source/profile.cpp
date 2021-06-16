@@ -1,25 +1,25 @@
-#include "profile.h"
-#include "actor/base.h"
+#include "game/profile/Profile.h"
+#include "game/actor/BaseActor.h"
 
 Profile* Profile::profilesCustom[Profile::NUM_PROFILES_CUSTOM];
 s16 Profile::prioritiesCustom[Profile::NUM_PROFILES_CUSTOM] = { 0 };
 u8 Profile::hasResourcesCustom[Profile::NUM_PROFILES_CUSTOM] = { 0 };
 u8 Profile::resourceCountCustom[Profile::NUM_PROFILES_CUSTOM] = { 0 };
-const sead::SafeString* Profile::resourceListsCustom[Profile::NUM_PROFILES_CUSTOM] = { nullptr };
+const sead::SafeString* Profile::resourceListsCustom[Profile::NUM_PROFILES_CUSTOM] = { 0 };
 
 
-Profile::Profile(Base* (*buildFunc)(const ActorBuildInfo*), u32 id, const sead::SafeString& name, const ActorInfo* actorInfo, u32 flags)
+Profile::Profile(BaseActor* (*buildFunc)(const ActorBuildInfo*), u32 id, const sead::SafeString& name, const ActorInfo* actorInfo, u32 flags)
 {
-    this->buildFunc = buildFunc;
-    this->id = id;
+    this->mBuildFunction = buildFunc;
+    this->mID = id;
 
     if (actorInfo)
-        this->actorInfo = actorInfo;
+        this->mActorInfo = actorInfo;
     else
-        this->actorInfo = &ActorInfo::Default;
+        this->mActorInfo = &ActorInfo::sDefault;
 
-    this->hasResourcesLoaded = 0;
-    this->flags = flags;
+    this->mHasResourcesLoaded = 0;
+    this->mFlags = flags;
 
     if (id < NUM_PROFILES_ORIGINAL)
         profilesOriginal[id] = this;
@@ -54,7 +54,7 @@ s16 Profile::getPriority(u32 id)
     return -1;
 }
 
-u8 Profile::getHasResources(u32 id)
+u8 Profile::hasResources(u32 id)
 {
     if (id < NUM_PROFILES_ORIGINAL)
         return hasResourcesOriginal[id];
@@ -65,7 +65,7 @@ u8 Profile::getHasResources(u32 id)
     return 0;
 }
 
-u8 Profile::getResourceCount(u32 id)
+u8 Profile::getProfileResourceCount(u32 id)
 {
     if (id < NUM_PROFILES_ORIGINAL)
         return resourceCountOriginal[id];
@@ -76,7 +76,7 @@ u8 Profile::getResourceCount(u32 id)
     return 0;
 }
 
-const sead::SafeString* Profile::getResourceList(u32 id)
+const sead::SafeStringBase<char>* Profile::getProfileResourceNames(u32 id)
 {
     if (id < NUM_PROFILES_ORIGINAL)
         return resourceListsOriginal[id];
@@ -84,14 +84,13 @@ const sead::SafeString* Profile::getResourceList(u32 id)
     if (id < NUM_PROFILES)
         return resourceListsCustom[id - NUM_PROFILES_ORIGINAL];
 
-    return nullptr;
+    return 0;
 }
 
 u32 Profile::getNumProfiles()
 {
     return NUM_PROFILES;
 }
-
 
 u32 Profile::spriteToProfileList[] =
 {
@@ -821,7 +820,4 @@ u32 Profile::spriteToProfileList[] =
     533,    // 723
 
     // Start of custom entries
-    ProfileId::ActorSpawner,  // 724
-    ProfileId::FlipBlock,     // 725
-    ProfileId::MagicPlatform  // 726
 };

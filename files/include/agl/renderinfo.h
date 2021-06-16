@@ -2,36 +2,35 @@
 
 #include "types.h"
 
-namespace sead {
-
-class Camera;
-class Projection;
-class Viewport;
-
+namespace sead 
+{
+    class Camera;
+    class Projection;
+    class Viewport;
 }
 
-namespace agl {
-
-class DisplayList;
-class RenderBuffer;
-
-namespace lyr {
-
-class Layer;
-
-class RenderInfo
+namespace agl 
 {
-public:
-    u32 renderStepIdx;
-    u32 displayType;
-    RenderBuffer* frameBuffer;
-    u32 _C;
-    Layer* parentLayer;
-    sead::Camera* camera;
-    sead::Projection* projection;
-    sead::Viewport* viewport;
-    DisplayList* displayList;
-    bool _24;
-};
+    class DisplayList;
+    class RenderBuffer;
 
-} }
+    namespace lyr 
+    {
+        class Layer;
+
+        class RenderInfo 
+        {
+        public:
+            u32 mRenderStepIdx;             // _0
+            u32 mDisplayType;               // _4
+            RenderBuffer* mFrameBuffer;     // _8
+            u32 _C;
+            Layer* mParentLayer;            // _C
+            sead::Camera* mCamera;          // _10
+            sead::Projection* mProjection;  // _14
+            sead::Viewport* mViewport;      // _18
+            DisplayList* mDisplayList;      // _1C
+            bool _20;
+        };
+    };
+};

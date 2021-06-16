@@ -1,9 +1,6 @@
 #include "dynamic_libs/gx2_functions.h"
 #include "dynamic_libs/os_functions.h"
-#include "dynamic_libs/zlib_functions.h"
 #include "types.h"
-
-#include "log.h"
 
 typedef void (*InitFunc)();
 extern "C" InitFunc _ctors[];
@@ -41,8 +38,4 @@ void callCtors()
     // Init the libraries you need here
     InitOSFunctionPointers();
     InitGX2FunctionPointers();
-    InitZlibFunctionPointers();
-
-    LOG("OSDynLoad_Acquire address: 0x%08X\n", OS_SPECIFICS->addr_OSDynLoad_Acquire);
-    LOG("OSDynLoad_FindExport address: 0x%08X\n", OS_SPECIFICS->addr_OSDynLoad_FindExport);
 }
