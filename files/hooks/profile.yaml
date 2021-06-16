@@ -5,7 +5,7 @@ Hooks:
   - type: branch
     instr: b
     addr: 02019554
-    func: __ct__7ProfileFPFPC14ActorBuildInfo_P4BaseUiRCQ2_4sead23SafeStringBase__tm__2_cPC9ActorInfoT2
+    func: __ct__7ProfileFPFPC14ActorBuildInfo_P9BaseActorUiRCQ2_4sead23SafeStringBase__tm__2_cPC9ActorInfoT2
 
   - type: branch
     instr: b
@@ -20,17 +20,17 @@ Hooks:
   - type: branch
     instr: b
     addr: 020199A8
-    func: getHasResources__7ProfileSFUi
+    func: hasResources__7ProfileSFUi
 
   - type: branch
     instr: b
     addr: 020199CC
-    func: getResourceCount__7ProfileSFUi
+    func: getProfileResourceCount__7ProfileSFUi
 
   - type: branch
     instr: b
     addr: 020199EC
-    func: getResourceList__7ProfileSFUi
+    func: getProfileResourceNames__7ProfileSFUi
 
   - type: patch
     addr: 0200501A

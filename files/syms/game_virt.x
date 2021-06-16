@@ -109,7 +109,6 @@ SECTIONS {
 	init__12LineFollowerFRC4Vec2Ucbbf = 0x0200DF60;
 	start__12LineFollowerFb = 0x0200E178;
 	AssignProfilesToStaticVars = 0x02017388;
-	__ct__7ProfileFPFPC14ActorBuildInfo_P9BaseActorUiRCQ2_4sead23SafeStringBase__tm__2_cPC9ActorInfo = 0x02019554;
 	getResourceArchive__7ProfileFUi = 0x020196E4;
 	get__7ProfileFUi = 0x02019774;
 	getPriority__7ProfileFUi = 0x02019988;

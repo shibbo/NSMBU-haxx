@@ -3,7 +3,7 @@
 Name: NSMBU Haxx
 Modules:
   - hooks/aa.yaml
-  - hooks/ctors.yaml
   - hooks/customactors.yaml
+  - hooks/ctors.yaml
   - hooks/dynamic_libs.yaml
   - hooks/profile.yaml
