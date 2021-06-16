@@ -55,7 +55,7 @@ for line in data:
 		continue
 
 	# add our address to this list as well as add the symbol to it
-	newFile.append(f"\t{symbol}=0x{lineAddress}\n")
+	newFile.append(f"\t{symbol}=0x{lineAddress};\n")
 	numSymbols += 1
 
 newFile.append("}")
