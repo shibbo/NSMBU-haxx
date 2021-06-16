@@ -55,12 +55,12 @@ for line in data:
 		continue
 
 	# add our address to this list as well as add the symbol to it
-	newFile.append(f"\t{symbol}=0x{lineAddress};\n")
+	newFile.append(f"\t{symbol} = 0x{lineAddress};\n")
 	numSymbols += 1
 
 newFile.append("}")
 
-with open("test.x", "w") as f:
+with open("test.x", "w", encoding='utf-8') as f:
 	for line in newFile:
 		f.write(line)
 
